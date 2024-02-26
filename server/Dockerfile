@@ -9,7 +9,8 @@ COPY ./aba/000-default.conf /aba/
 COPY ./aba/redirect.conf /aba/
 # Запускает команду pip install для всех библиотек, перечисленных в requirements_ubuntu.txt
 RUN pip install --upgrade pip && pip install -r requirements_ubuntu.txt
-
+RUN pip install django-haystack==2.4.0
+RUN pip install pysolr==3.3.2
 RUN apt-get update
 
 RUN apt-get install -y apache2 nano libapache2-mod-wsgi-py3 
